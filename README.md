@@ -9,7 +9,7 @@ The PHP Web Development Framework for Ethereal Project.
 
 ```bash 
 # clone git repository to your local storage
-git clone https://github.com/ethereal97/etheio-ethereal
+git clone https://github.com/ethereal97/etherio-ethereal
 
 # change directory and install using composer 
 cd etherio-ethereal
