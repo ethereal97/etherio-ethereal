@@ -1,15 +1,22 @@
 <?php
 
-//* Ethereal Framework Default Helper Functions File
+namespace Ethereal\Foundation;
 
-use Ethereal\Foundation\Application;
-
-if (! function_exists('env')) {
-  function env($name, $default = null)
+class Environment
+{
+  public function parse(string $envFile)
   {
-    return $_ENV[$name] ?? getenv($name) ?: $default;
+    if (! file_exists($envFile)) {
+      return false;
+    }
+    
+    $env = parse_ini_file($env, false, INI_SCANNER_TYPED);
+    
+    return new Dotenv($env);
+  }
+  
+  public function __get($offset)
+  {
+    return null;
   }
 }
-
-if (! function_exists('app')) {
-  fun

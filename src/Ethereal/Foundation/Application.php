@@ -2,23 +2,6 @@
 
 namespace Ethereal\Foundation;
 
-class Dotenv
-{
-  public function __construct(array $env)
-  {
-    foreach ($env as $name => $value):
-      $this->${name} = $value;  
-    endforeach;
-  }
-  
-  public function __get($offset)
-  {
-    return null;
-  }
-}<?php
-
-namespace Ethereal\Foundation;
-
 class Application
 {
   private static $_instance;
@@ -59,4 +42,6 @@ class Application
   {
     $defaultPath = $this->defaultPath ?: $this->basePath;
     
-    return $defaultPath . ($path ? DIRECTO
+    return $defaultPath . ($path ? DIRECTORY_SEPARATOR . $path : $path);
+  }
+}
